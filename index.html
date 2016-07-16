@@ -19,31 +19,28 @@
 <script>
   mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsCcEnPNfo2ag';
 
-  var orbitistPointsGeojson = "https://app.orbitist.com/api/v1/points/90.json";
-
   var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/dark-v9'
+      style: 'mapbox://styles/mapbox/light-v9'
   });
 
-  map.on('style.load', function() {
+  var orbitistPointsGeojson = "https://app.orbitist.com/api/v1/points/90.json";
 
-  map.addSource("orbitistPoints", {
-    type: "geojson",
-    data: orbitistPointsGeojson
+  map.on('load', function() {
+    map.addSource("orbitistPoints", {
+      type: "geojson",
+      data: orbitistPointsGeojson
+    });
+    map.addLayer({
+      "id": "points",
+      "type": "symbol",
+      "source": "orbitistPoints",
+      "layout": {
+        "icon-image": "marker-15",
+        "icon-allow-overlap": true
+      }
+    });
   });
-
-  map.addLayer({
-    "id": "unclustered-points",
-    "type": "symbol",
-    "source": "orbitistPoints",
-    "layout": {
-      "icon-image": "marker-15",
-      "icon-allow-overlap": true
-    }
-  });
-
-});
 
 </script>
 
