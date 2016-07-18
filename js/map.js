@@ -1,11 +1,30 @@
+// Get points //
+var orbitistPointsGeojson = (function () {
+    var orbitistPointsGeojson = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': 'https://app.orbitist.com/api/v1/points/' + mapid + '.json',
+        'dataType': "json",
+        'success': function (data) {
+            orbitistPointsGeojson = data;
+        }
+    });
+    return orbitistPointsGeojson;
+})();
+
+// Get bounds from orbitistPointsGeojson //
+var bounds = new mapboxgl.LngLatBounds();
+orbitistPointsGeojson.features.forEach(function(feature) {
+    bounds.extend(feature.geometry.coordinates);
+});
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsCcEnPNfo2ag';
 
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9'
 });
-
-var orbitistPointsGeojson = 'https://app.orbitist.com/api/v1/points/' + mapid + '.json';
 
 map.on('load', function() {
   map.addSource("orbitistPoints", {
@@ -25,6 +44,7 @@ map.on('load', function() {
       "text-anchor": "top"
     }
   });
+  map.fitBounds(bounds);
 });
 
 map.on('click', function (e) {
