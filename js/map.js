@@ -5,7 +5,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/light-v9'
 });
 
-var orbitistPointsGeojson = "https://app.orbitist.com/api/v1/points/90.json";
+var orbitistPointsGeojson = 'https://app.orbitist.com/api/v1/points/' + mapid + '.json';
 
 map.on('load', function() {
   map.addSource("orbitistPoints", {
