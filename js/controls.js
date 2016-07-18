@@ -1,22 +1,71 @@
+// Small Screens
 jQuery(document).ready(function () {
-  jQuery('.map-info-toggle').click(function () {
-    jQuery('.map').css({"left": "-100%"}),
-    jQuery('.map-info').css({"left": "0"}),
-    jQuery('.map-toggle-info').css({"left": "10px"})
-  });
-  jQuery('.map-list-toggle').click(function () {
-    jQuery('.map').css({"left": "100%"}),
-    jQuery('.map-list').css({"left": "0"}),
-    jQuery('.map-toggle-list').css({"right": "10px"})
-	});
-  jQuery('.map-toggle-info').click(function () {
-    jQuery('.map').css({"left": "0"}),
-    jQuery('.map-info').css({"left": "100%"}),
-    jQuery('.map-toggle-info').css({"left": "calc(100% + 10px)"})
-	});
-  jQuery('.map-toggle-list').click(function () {
-    jQuery('.map').css({"left": "0"}),
-    jQuery('.map-list').css({"left": "-100%"}),
-    jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"})
-	});
+  if (jQuery(window).width() < 800){
+    jQuery('.map-info-toggle').click(function () {
+      jQuery('.map').css({"left": "-100%"}),
+      jQuery('.map-info').css({"left": "0"}),
+      jQuery('.map-toggle-info').css({"left": "10px"}),
+      jQuery('.map-info-toggle').css({"right": "calc(100% + 10px)"}),
+      jQuery('.map-list-toggle').css({"left": "calc(-100% + 10px)"})
+    });
+    jQuery('.map-list-toggle').click(function () {
+      jQuery('.map').css({"left": "100%"}),
+      jQuery('.map-list').css({"left": "0"}),
+      jQuery('.map-toggle-list').css({"right": "10px"}),
+      jQuery('.map-info-toggle').css({"right": "calc(-100% + 10px)"}),
+      jQuery('.map-list-toggle').css({"left": "calc(100% + 10px)"})
+    });
+    jQuery('.map-toggle-info').click(function () {
+      jQuery('.map').css({"left": "0"}),
+      jQuery('.map-info').css({"left": "100%"}),
+      jQuery('.map-toggle-info').css({"left": "calc(100% + 10px)"}),
+      jQuery('.map-info-toggle').css({"right": "10px"}),
+      jQuery('.map-list-toggle').css({"left": "10px"})
+    });
+    jQuery('.map-toggle-list').click(function () {
+      jQuery('.map').css({"left": "0"}),
+      jQuery('.map-list').css({"left": "-100%"}),
+      jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"}),
+      jQuery('.map-info-toggle').css({"right": "10px"}),
+      jQuery('.map-list-toggle').css({"left": "10px"})
+    });
+  }
+});
+
+// Big Screens
+jQuery(document).ready(function () {
+  if (jQuery(window).width() >= 800){
+    jQuery('.map-info-toggle').click(function () {
+      jQuery('.map').css({"left": "0","width":"calc(100% - 500px)"}),
+      jQuery('.map-info').css({"left": "calc(100% - 500px)"}),
+      jQuery('.map-list').css({"left": "-300px"}),
+      jQuery('.map-toggle-info').css({"left": "calc(100% - 490px)"}),
+      jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"}),
+      jQuery('.map-list-toggle').css({"left": "10px"})
+    });
+    jQuery('.map-list-toggle').click(function () {
+      jQuery('.map').css({"left": "300px","width":"calc(100% - 300px)"}),
+      jQuery('.map-list').css({"left": "0"}),
+      jQuery('.map-info').css({"left": "100%"}),
+      jQuery('.map-toggle-list').css({"right": "calc(100% - 290px)"}),
+      jQuery('.map-toggle-info').css({"left": "calc(100% + 10px)"})
+    });
+    jQuery('.map-toggle-info').click(function () {
+      jQuery('.map').css({"left": "0","width": "100%"}),
+      jQuery('.map-info').css({"left": "100%"}),
+      jQuery('.map-toggle-info').css({"left": "calc(100% + 10px)"})
+    });
+    jQuery('.map-toggle-list').click(function () {
+      jQuery('.map').css({"left": "0","width": "100%"}),
+      jQuery('.map-list').css({"left": "-300px"}),
+      jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"})
+    });
+    jQuery('.map').click(function () {
+      jQuery('.map').css({"left": "0","width": "100%"}),
+      jQuery('.map-list').css({"left": "-300px"}),
+      jQuery('.map-info').css({"left": "100%"}),
+      jQuery('.map-toggle-info').css({"left": "calc(100% + 10px)"}),
+      jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"})
+    });
+  }
 });

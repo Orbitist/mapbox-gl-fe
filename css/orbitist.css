@@ -9,7 +9,8 @@ body {
   position:fixed;
   top:0;
   bottom:0;
-  width:100%;
+  left: 0;
+  width: 100%;
   z-index:1;
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
@@ -22,7 +23,8 @@ body {
   bottom:0;
   left:100%;
   width:100%;
-  z-index:1;
+  z-index:4;
+  background-color: white;
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
@@ -36,7 +38,8 @@ body {
   bottom:0;
   left:-100%;
   width:100%;
-  z-index:1;
+  z-index:4;
+  background-color: white;
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
@@ -56,6 +59,9 @@ body {
   text-align: center;
   -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
   box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+  -webkit-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
+  transition: all .4s ease-out;
 }
 
 .control i {
@@ -63,31 +69,29 @@ body {
 }
 
 .map-info-toggle {
-  position:absolute;
+  position:fixed;
   bottom:20px;
   right:10px;
+  z-index: 3;
 }
 
 .map-list-toggle {
-  position:absolute;
+  position:fixed;
   bottom:20px;
   left:10px;
+  z-index: 3;
 }
 
 .map-toggle-info {
   position:fixed;
   bottom:20px;
-  -webkit-transition: all .4s ease-out;
-  -o-transition: all .4s ease-out;
-  transition: all .4s ease-out;
   left:calc(100% + 10px);
+  z-index: 5;
 }
 
 .map-toggle-list {
   position:fixed;
   bottom:20px;
-  -webkit-transition: all .4s ease-out;
-  -o-transition: all .4s ease-out;
-  transition: all .4s ease-out;
   right:calc(100% + 10px);
+  z-index: 5;
 }

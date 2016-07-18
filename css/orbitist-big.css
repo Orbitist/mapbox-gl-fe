@@ -1,0 +1,12 @@
+@media (min-width: 800px) {
+
+.map-info {
+  width: 500px;
+}
+
+.map-list {
+  left: -300px;
+  width: 300px;
+}
+
+}
