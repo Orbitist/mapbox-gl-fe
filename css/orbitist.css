@@ -26,6 +26,8 @@ body {
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .map-list {
@@ -38,6 +40,8 @@ body {
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /** Map Info Pane and Buttons **/
@@ -71,13 +75,19 @@ body {
 }
 
 .map-toggle-info {
-  position:absolute;
+  position:fixed;
   bottom:20px;
-  left:10px;
+  -webkit-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  left:calc(100% + 10px);
 }
 
 .map-toggle-list {
-  position:absolute;
+  position:fixed;
   bottom:20px;
-  right:10px;
+  -webkit-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  right:calc(100% + 10px);
 }
