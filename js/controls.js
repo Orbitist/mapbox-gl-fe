@@ -44,7 +44,7 @@ jQuery(document).ready(function () {
       jQuery('.map-list-toggle').css({"left": "10px"})
     });
     jQuery('.map-list-toggle').click(function () {
-      jQuery('.map').css({"left": "300px","width":"calc(100% - 300px)"}),
+      jQuery('.map').css({"left": "0px","width":"calc(100%)"}),
       jQuery('.map-list').css({"left": "0"}),
       jQuery('.map-info').css({"left": "100%"}),
       jQuery('.map-toggle-list').css({"right": "calc(100% - 290px)"}),
@@ -60,12 +60,19 @@ jQuery(document).ready(function () {
       jQuery('.map-list').css({"left": "-300px"}),
       jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"})
     });
-    jQuery('.map').click(function () {
-      jQuery('.map').css({"left": "0","width": "100%"}),
-      jQuery('.map-list').css({"left": "-300px"}),
-      jQuery('.map-info').css({"left": "100%"}),
-      jQuery('.map-toggle-info').css({"left": "calc(100% + 10px)"}),
-      jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"})
-    });
+    jQuery('.map').on('mousedown', function(e) {
+        jQuery(this).data('p0', { x: e.pageX, y: e.pageY });
+    }).on('mouseup', function(e) {
+      var p0 = $(this).data('p0'),
+          p1 = { x: e.pageX, y: e.pageY },
+          d = Math.sqrt(Math.pow(p1.x - p0.x, 2) + Math.pow(p1.y - p0.y, 2));
+      if (d < 4) {
+          jQuery('.map').css({"left": "0","width": "100%"}),
+          jQuery('.map-list').css({"left": "-300px"}),
+          jQuery('.map-info').css({"left": "100%"}),
+          jQuery('.map-toggle-info').css({"left": "calc(100% + 10px)"}),
+          jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"})
+      }
+    })
   }
 });
