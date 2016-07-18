@@ -34,7 +34,7 @@ body {
   position:fixed;
   top:0;
   bottom:0;
-  right:100%;
+  left:-100%;
   width:100%;
   z-index:1;
   -webkit-transition: all .4s ease-out;
