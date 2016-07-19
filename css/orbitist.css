@@ -18,32 +18,28 @@ body {
 }
 
 .map-info {
-  position:fixed;
-  top:0;
-  bottom:0;
+  position:absolute;;
   left:100%;
   width:100%;
+  min-height: 100%;
   z-index:4;
   background-color: white;
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
-  overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .map-list {
-  position:fixed;
-  top:0;
-  bottom:0;
+  position:absolute;
   left:-100%;
   width:100%;
+  min-height: 100%;
   z-index:4;
   background-color: white;
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
-  overflow-y: scroll;
   overflow-x: hidden;
 }
 
