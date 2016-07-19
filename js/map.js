@@ -39,6 +39,7 @@ map.on('load', function() {
     "source": "orbitistPoints",
     "layout": {
       "icon-allow-overlap": true,
+      "icon-offset": [0, -5],
       "text-field": "{point_title}",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
       "text-offset": [0, 0.5],
