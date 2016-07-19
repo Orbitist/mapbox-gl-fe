@@ -18,7 +18,9 @@ body {
 }
 
 .map-info {
-  position:absolute;;
+  position:fixed;
+  top:0;
+  bottom:0;
   left:100%;
   width:100%;
   min-height: 100%;
@@ -27,11 +29,17 @@ body {
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
+  overflow-y: scroll;
   overflow-x: hidden;
+}
+.map-info img {
+  max-width: 100%;
 }
 
 .map-list {
-  position:absolute;
+  position:fixed;
+  top:0;
+  bottom:0;
   left:-100%;
   width:100%;
   min-height: 100%;
@@ -40,6 +48,7 @@ body {
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 
