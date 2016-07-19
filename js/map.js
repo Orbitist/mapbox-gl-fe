@@ -80,11 +80,6 @@ map.on('click', function (e) {
       .setHTML(feature.properties.point_title)
       .addTo(map);
 
-  // Use queryRenderedFeatures to get features at a click event's point
-  // Use layer option to avoid getting results from other layers
-
-  // if there are features within the given radius of the click event,
-  // fly to the location of the click event
   if (features.length) {
       // Get coordinates from the symbol and center the map on those coordinates
       map.flyTo({center: features[0].geometry.coordinates});
