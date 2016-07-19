@@ -24,7 +24,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsC
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/orbitist/ciqsdlrq30001cqmaq3ywzukq'
+    style: 'mapbox://styles/orbitist/ciqsdlrq30001cqmaq3ywzukq',
+    pitch: 60
 });
 
 map.on('load', function() {
@@ -37,7 +38,6 @@ map.on('load', function() {
     "type": "symbol",
     "source": "orbitistPoints",
     "layout": {
-      "icon-image": "airfield-11",
       "icon-allow-overlap": true,
       "text-field": "{point_title}",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
@@ -46,6 +46,21 @@ map.on('load', function() {
     }
   });
   map.fitBounds(bounds);
+  // Add custom markers to map
+  for (var i = 0; i < orbitistPointsGeojson.features.length; i++) {
+      var feature = orbitistPointsGeojson.features[i];
+
+      // create an img element for the marker
+      var marker = document.createElement('img');
+      marker.src = feature.properties.point_marker_url;
+      marker.style.width = "30px";
+      marker.style.height = "30px";
+
+      // add marker to map
+      new mapboxgl.Marker(marker)
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map);
+  }
 });
 
 map.on('click', function (e) {
