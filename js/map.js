@@ -24,7 +24,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsC
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/orbitist/ciqsdlrq30001cqmaq3ywzukq',
+    style: 'mapbox://styles/orbitist/ciqtr8nwi0007cum5jw7y42my',
     pitch: 60
 });
 
