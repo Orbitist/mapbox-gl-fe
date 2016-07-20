@@ -46,7 +46,8 @@ map.on('load', function() {
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
       "text-size": 12,
       "text-offset": [0, 0.5],
-      "text-anchor": "top"
+      "text-anchor": "top",
+      "text-allow-overlap": true
     },
     "paint": {
       "icon-opacity": 0,
