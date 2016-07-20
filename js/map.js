@@ -77,7 +77,7 @@ map.on('click', function (e) {
   // based on the feature found.
   var popup = new mapboxgl.Popup({anchor: 'none'})
       .setLngLat(feature.geometry.coordinates)
-      .setHTML('<a href="' + feature.properties.point_image + '" data-lightbox="' + feature.properties.point_id + '" data-title="' + feature.properties.point_image_caption + '"><img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"></a>' + feature.properties.point_lightbox_images)
+      .setHTML('<a href="' + feature.properties.point_image + '" data-lightbox="' + feature.properties.point_id + '" data-title="' + feature.properties.point_image_caption + '"><img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"></a>' + feature.properties.point_lightbox_images + '<div class="popupbody"><div class="popuptitle"><h3>' + feature.properties.point_title + '</h3></div>' + feature.properties.point_embeds + feature.properties.point_body + feature.properties.point_links + '<div class="action-items"><div class="col-xs-6"><a href="https://www.google.com/maps/dir/Current+Location/' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="_blank"><span class="fa fa-car center-block"></span></a></div><div class="col-xs-6"><a href="https://app.orbitist.com/print/' + feature.properties.point_id + '" target="_blank"><span class="fa fa-print center-block"></span></a></div></div></div>')
       .addTo(map);
 
       if (features.length) {

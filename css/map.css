@@ -10,13 +10,15 @@
   right: 8px;
   max-height: 80%;
   overflow-x: hidden;
-  -webkit-transition: all .4s ease-out;
-  -o-transition: all .4s ease-out;
-  transition: all .4s ease-out;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mapboxgl-popup-content {
   padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mapboxgl-popup-content img {
