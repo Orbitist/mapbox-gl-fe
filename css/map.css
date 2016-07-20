@@ -24,6 +24,7 @@
 .mapboxgl-popup-content {
   padding: 0;
   max-width: 500px;
+  min-width: 290px;
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
