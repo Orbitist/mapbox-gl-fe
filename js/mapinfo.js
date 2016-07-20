@@ -8,9 +8,9 @@ $(document).ready(
                     var  content  = '<img src="';
                          content +=  data[i].map_image;
                          content  += '" class="img-responsive">';
-                    	 	 content  += '<div class="story-slide-content"><h4>';
+                    	 	 content  += '<div class="map-info-body"><h3>';
                          content +=  data[i].map_title;
-                         content  += '</h4>';
+                         content  += '</h3>';
                          content +=  data[i].map_body;
                          content +=  '</div>';
                          cartodbkey =  data[i].map_cartodb;

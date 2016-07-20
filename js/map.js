@@ -24,7 +24,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsC
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/orbitist/ciqtr8nwi0007cum5jw7y42my',
+    style: 'mapbox://styles/orbitist/ciqpdy5nc002cbhnfg4otij3w',
     pitch: 60
 });
 
@@ -45,9 +45,8 @@ map.on('load', function() {
       "text-field": "{point_title}",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
       "text-size": 12,
-      "text-offset": [0, 0.4],
-      "text-anchor": "top",
-      "text-optional": true
+      "text-offset": [0, 0.5],
+      "text-anchor": "top"
     },
     "paint": {
       "icon-opacity": 0,
@@ -86,7 +85,7 @@ map.on('click', function (e) {
   // based on the feature found.
   var popup = new mapboxgl.Popup({anchor: 'none'})
       .setLngLat(feature.geometry.coordinates)
-      .setHTML('<a href="' + feature.properties.point_image + '" data-lightbox="' + feature.properties.point_id + '" data-title="' + feature.properties.point_image_caption + '"><img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"></a>' + feature.properties.point_lightbox_images + '<div class="popupbody"><div class="popuptitle"><h3>' + feature.properties.point_title + '</h3></div>' + feature.properties.point_embeds + feature.properties.point_body + feature.properties.point_links + '<div class="action-items"><div class="col-xs-6"><a href="https://www.google.com/maps/dir/Current+Location/' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="_blank"><span class="fa fa-car center-block"></span></a></div><div class="col-xs-6"><a href="https://app.orbitist.com/print/' + feature.properties.point_id + '" target="_blank"><span class="fa fa-print center-block"></span></a></div></div></div>')
+      .setHTML('<a href="' + feature.properties.point_image + '" data-lightbox="' + feature.properties.point_id + '" data-title="' + feature.properties.point_image_caption + '"><img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"></a>' + feature.properties.point_lightbox_images + '<div class="popup-body"><div class="popuptitle"><h3>' + feature.properties.point_title + '</h3></div>' + feature.properties.point_embeds + feature.properties.point_body + feature.properties.point_links + '<div class="action-items"><div class="action-item"><a href="https://www.google.com/maps/dir/Current+Location/' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="_blank"><span class="fa fa-car center-block"></span></a></div><div class="action-item"><a href="https://app.orbitist.com/print/' + feature.properties.point_id + '" target="_blank"><span class="fa fa-print center-block"></span></a></div></div></div>')
       .addTo(map);
 
       if (features.length) {
