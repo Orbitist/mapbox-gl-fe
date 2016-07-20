@@ -38,12 +38,21 @@ map.on('load', function() {
     "type": "symbol",
     "source": "orbitistPoints",
     "layout": {
+      "icon-image": "marker-15",
+      "icon-size": 2.5,
       "icon-allow-overlap": true,
       "icon-offset": [0, -5],
       "text-field": "{point_title}",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-      "text-offset": [0, 0.5],
-      "text-anchor": "top"
+      "text-size": 12,
+      "text-offset": [0, 0.4],
+      "text-anchor": "top",
+      "text-optional": true
+    },
+    "paint": {
+      "icon-opacity": 0,
+      "text-halo-width": 2,
+      "text-halo-color": "white"
     }
   });
   map.fitBounds(bounds);
