@@ -2,3 +2,27 @@
   margin-left: -15px;
   margin-top: -30px;
 }
+
+.mapboxgl-popup {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  max-height: 80%;
+  overflow-x: hidden;
+  -webkit-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+
+.mapboxgl-popup-content {
+  padding: 0;
+}
+
+.mapboxgl-popup-content img {
+  max-width: 100%;
+}
+
+.mapboxgl-popup-tip {
+  display: none;
+}

@@ -75,15 +75,15 @@ map.on('click', function (e) {
 
   // Populate the popup and set its coordinates
   // based on the feature found.
-  var popup = new mapboxgl.Popup()
+  var popup = new mapboxgl.Popup({anchor: 'none'})
       .setLngLat(feature.geometry.coordinates)
-      .setHTML(feature.properties.point_title)
+      .setHTML('<a href="' + feature.properties.point_image + '" data-lightbox="' + feature.properties.point_id + '" data-title="' + feature.properties.point_image_caption + '"><img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"></a>' + feature.properties.point_lightbox_images)
       .addTo(map);
 
-  if (features.length) {
-      // Get coordinates from the symbol and center the map on those coordinates
-      map.flyTo({center: features[0].geometry.coordinates});
-  }
+      if (features.length) {
+          // Get coordinates from the symbol and center the map on those coordinates
+          map.flyTo({center: features[0].geometry.coordinates});
+      }
 });
 
 // Use the same approach as above to indicate that the symbols are clickable
@@ -92,3 +92,8 @@ map.on('mousemove', function (e) {
   var features = map.queryRenderedFeatures(e.point, { layers: ['points'] });
   map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 });
+
+// Controls
+map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
+
+map.addControl(new mapboxgl.Geolocate({position: 'top-left'}));
