@@ -94,5 +94,5 @@ map.on('mousemove', function (e) {
 });
 
 // Map Controls
-map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
-map.addControl(new mapboxgl.Geolocate({position: 'top-left'}));
+map.addControl(new mapboxgl.Navigation({position: 'top-right'}));
+map.addControl(new mapboxgl.Geolocate({position: 'top-right'}));

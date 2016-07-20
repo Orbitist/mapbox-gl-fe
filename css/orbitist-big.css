@@ -9,4 +9,16 @@
   width: 300px;
 }
 
+.mapboxgl-popup {
+  top: 20px;
+  left: 20px;
+  min-width: 500px;
+}
+
+.mapboxgl-popup-close-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 }
