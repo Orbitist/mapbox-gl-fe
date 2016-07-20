@@ -93,7 +93,6 @@ map.on('mousemove', function (e) {
   map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 });
 
-// Controls
+// Map Controls
 map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
-
 map.addControl(new mapboxgl.Geolocate({position: 'top-left'}));

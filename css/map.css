@@ -3,6 +3,11 @@
   margin-top: -30px;
 }
 
+@keyframes popup_animation {
+    from {opacity: 0; max-width: 0%; max-height: 0%;}
+    to {opacity:1; max-width: 500px; max-height: 80%;}
+}
+
 .mapboxgl-popup {
   position: fixed;
   top: 8px;
@@ -12,10 +17,13 @@
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  animation-name: popup_animation;
+  animation-duration: 0.3s;
 }
 
 .mapboxgl-popup-content {
   padding: 0;
+  max-width: 500px;
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
