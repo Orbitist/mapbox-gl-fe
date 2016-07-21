@@ -17,8 +17,8 @@
 
 .mapboxgl-popup-close-button {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 2px;
+  right: 2px;
 }
 
 }

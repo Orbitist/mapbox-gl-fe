@@ -25,7 +25,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsC
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/orbitist/ciqpdy5nc002cbhnfg4otij3w',
-    pitch: 60
+    pitch: 0
 });
 
 map.on('load', function() {
@@ -39,15 +39,16 @@ map.on('load', function() {
     "source": "orbitistPoints",
     "layout": {
       "icon-image": "marker-15",
-      "icon-size": 2.5,
+      "icon-size": 2,
       "icon-allow-overlap": true,
       "icon-offset": [0, -5],
+      "icon-ignore-placement": true,
       "text-field": "{point_title}",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
       "text-size": 12,
       "text-offset": [0, 0.5],
       "text-anchor": "top",
-      "text-allow-overlap": true
+      "text-allow-overlap": false
     },
     "paint": {
       "icon-opacity": 0,
