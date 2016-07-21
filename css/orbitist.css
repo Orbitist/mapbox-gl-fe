@@ -54,6 +54,10 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.map-list p {
+  padding: 0 10px;
+  cursor: pointer;
+}
 
 /** Map Info Pane and Buttons **/
 /* Toggle Button */
