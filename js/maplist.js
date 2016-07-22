@@ -5,7 +5,7 @@ $(document).ready(
       function(data){
         // ciclo l'array
         for(i=0; i<data.length; i++){
-          var  listItem  = '<div class="map-list-item" id="' + data[i].list_point_id + '""><img src="' + data[i].list_image + '" /><p>' + data[i].list_title + '</p></div><script>document.getElementById("' + data[i].list_point_id + '").addEventListener("click", function () {map.flyTo({center: [' + data[i].list_longitude + ',' + data[i].list_latitude + '],zoom: 15,bearing: 360 * Math.random(),pitch: 60});});</script>';
+          var  listItem  = '<hr><div class="map-list-item" id="' + data[i].list_point_id + '""><img src="' + data[i].list_image + '" /><p>' + data[i].list_title + '</p></div><script>document.getElementById("' + data[i].list_point_id + '").addEventListener("click", function () {map.flyTo({center: [' + data[i].list_longitude + ',' + data[i].list_latitude + '],zoom: 15,bearing: 360 * Math.random(),pitch: 60});});</script>';
           $('div.map-list').append(listItem);
         }
       }
