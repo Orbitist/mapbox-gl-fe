@@ -29,6 +29,13 @@ jQuery(document).ready(function () {
       jQuery('.map-info-toggle').css({"right": "10px"}),
       jQuery('.map-list-toggle').css({"left": "10px"})
     });
+    jQuery('.map-list').click(function () {
+      jQuery('.map').css({"left": "0"}),
+      jQuery('.map-list').css({"left": "-100%"}),
+      jQuery('.map-toggle-list').css({"right": "calc(100% + 10px)"}),
+      jQuery('.map-info-toggle').css({"right": "10px"}),
+      jQuery('.map-list-toggle').css({"left": "10px"})
+    });
   }
 });
 

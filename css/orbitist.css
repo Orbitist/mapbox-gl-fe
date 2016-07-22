@@ -53,12 +53,27 @@ html {
   transition: all .4s ease-out;
   overflow-y: scroll;
   overflow-x: hidden;
-}
-.map-list p {
-  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 100px;
 }
 .map-list-item {
+  position: relative;
   cursor: pointer;
+  height: 120px;
+  padding: 10px;
+}
+.map-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.map-list-item img {
+  width: 100px;
+  float: left;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+.map-list-item p {
+  color: white;
+  margin-left: 105px;
 }
 
 /** Map Info Pane and Buttons **/
@@ -76,6 +91,7 @@ html {
   -webkit-transition: all .4s ease-out;
   -o-transition: all .4s ease-out;
   transition: all .4s ease-out;
+  cursor: pointer;
 }
 
 .control i {
