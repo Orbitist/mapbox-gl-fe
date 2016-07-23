@@ -5,7 +5,7 @@
 }
 
 @keyframes popup_animation {
-    from {top: -100%;}
+    from {top: -90%;}
     to {top: 8px;}
 }
 

@@ -66,6 +66,15 @@ html {
   height: 120px;
   padding: 10px;
 }
+#map-reset {
+  height: 50px;
+}
+#map-reset p {
+  margin-left: 0;
+  margin-top: 13px;
+  text-align: center;
+  font-size: 20px;
+}
 .map-list-item img {
   width: 100px;
   float: left;
