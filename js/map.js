@@ -18,7 +18,6 @@ var bounds = new mapboxgl.LngLatBounds();
 orbitistPointsGeojson.features.forEach(function(feature) {
     bounds.extend(feature.geometry.coordinates);
 });
-
 // Authorize with Mapbox //
 mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsCcEnPNfo2ag';
 
