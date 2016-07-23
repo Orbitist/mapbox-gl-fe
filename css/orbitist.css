@@ -53,7 +53,7 @@ html {
   transition: all .4s ease-out;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   padding-bottom: 100px;
 }
 .map-list hr {
@@ -65,9 +65,6 @@ html {
   cursor: pointer;
   height: 120px;
   padding: 10px;
-}
-.map-list-item:hover {
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .map-list-item img {
   width: 100px;
