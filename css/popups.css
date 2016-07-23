@@ -3,6 +3,7 @@
 }
 .popup-body iframe {
   max-width: 100% !important;
+  min-width: 100% !important;
 }
 
 .oembed-title {
