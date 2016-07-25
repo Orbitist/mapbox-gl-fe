@@ -23,7 +23,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsC
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/orbitist/ciqpdy5nc002cbhnfg4otij3w',
+    style: 'mapbox://styles/orbitist/ciqvf508a0003dikyblmyb56h',
     pitch: 0
 });
 
