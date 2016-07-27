@@ -7,7 +7,7 @@ $(document).ready(
                 for(i=0; i<data.length; i++){
                     var  content  = '<img src="';
                          content +=  data[i].map_image;
-                         content  += '" class="img-responsive">';
+                         content  += '">';
                     	 	 content  += '<div class="map-info-body"><h3>';
                          content +=  data[i].map_title;
                          content  += '</h3>';

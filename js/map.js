@@ -72,24 +72,24 @@ map.on('load', function() {
 
 map.on('click', function (e) {
   var features = map.queryRenderedFeatures(e.point, { layers: ['points'] });
-
   if (!features.length) {
       return;
   }
-
   var feature = features[0];
-
-  // Populate the popup and set its coordinates
-  // based on the feature found.
   var popup = new mapboxgl.Popup({anchor: 'none'})
-      .setLngLat(feature.geometry.coordinates)
-      .setHTML('<a href="' + feature.properties.point_image + '" data-lightbox="' + feature.properties.point_id + '" data-title="' + feature.properties.point_image_caption + '"><img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"></a>' + feature.properties.point_lightbox_images + '<div class="popup-body"><div class="popuptitle"><h3>' + feature.properties.point_title + '</h3></div>' + feature.properties.point_embeds + feature.properties.point_body + feature.properties.point_links + '<div class="action-items"><div class="action-item"><a href="https://www.google.com/maps/dir/Current+Location/' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="_blank"><span class="fa fa-car center-block"></span></a></div><div class="action-item"><a href="https://app.orbitist.com/print/' + feature.properties.point_id + '" target="_blank"><span class="fa fa-print center-block"></span></a></div></div></div>')
-      .addTo(map);
-
-      if (features.length) {
-          // Get coordinates from the symbol and center the map on those coordinates
-          map.flyTo({center: features[0].geometry.coordinates});
-      }
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<a href="' + feature.properties.point_image + '" data-lightbox="' + feature.properties.point_id + '" data-title="' + feature.properties.point_image_caption + '" class="popup-image-anchor"><img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"></a>' + feature.properties.point_lightbox_images + '<div class="popup-body"><div class="popuptitle"><h3>' + feature.properties.point_title + '</h3></div>' + feature.properties.point_embeds + feature.properties.point_body + feature.properties.point_links + '<div class="action-items"><div class="action-item"><a href="https://www.google.com/maps/dir/Current+Location/' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="_blank"><span class="fa fa-car center-block"></span></a></div><div class="action-item"><a href="https://app.orbitist.com/print/' + feature.properties.point_id + '" target="_blank"><span class="fa fa-print center-block"></span></a></div></div></div>')
+    .addTo(map);
+  if (features.length) {
+    // Get coordinates from the symbol and center the map on those coordinates
+    map.flyTo({center: features[0].geometry.coordinates});
+  }
+  if (feature.properties.point_image.length > 5 && feature.properties.point_lightbox_images.length > 5) {
+    $('.popup-image-anchor').append('<div class="popupimage-expand"><span class="fa fa-clone"></span> More Images</div>');
+  }
+  else if (feature.properties.point_image.length > 5) {
+    $('.popup-image-anchor').append('<div class="popupimage-expand"><span class="fa fa-clone"></span> Expand Image</div>');
+  }
 });
 
 // Use the same approach as above to indicate that the symbols are clickable
