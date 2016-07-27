@@ -9,6 +9,11 @@
   width: 300px;
 }
 
+@keyframes popup_animation {
+    from {top: -90%;}
+    to {top: 20px;}
+}
+
 .mapboxgl-popup {
   top: 20px;
   left: 20px;
