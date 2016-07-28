@@ -44,7 +44,7 @@ map.on('load', function() {
       "text-size": 12,
       "text-offset": [0, 0.5],
       "text-anchor": "top",
-      "text-allow-overlap": false
+      "text-allow-overlap": true
     },
     "paint": {
       "icon-opacity": 0,
