@@ -14,7 +14,8 @@ jQuery(document).ready(function () {
       jQuery('.map-toggle-list').css({"right": "10px"}),
       jQuery('.map-info-toggle').css({"right": "calc(-100% + 10px)"}),
       jQuery('.map-list-toggle').css({"left": "calc(100% + 10px)"}),
-      jQuery('.mapboxgl-popup').css({"top": "-100%"})
+      jQuery('.mapboxgl-popup').css({"top": "-100%"}),
+      jQuery('.mapboxgl-popup-close-button').css({"top": "-100%"})
     });
     jQuery('.map-toggle-info').click(function () {
       jQuery('.map').css({"left": "0"}),
