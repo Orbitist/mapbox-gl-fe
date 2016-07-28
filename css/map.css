@@ -50,6 +50,7 @@
   top: 0;
   bottom: 0;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mapboxgl-popup-content img {
