@@ -65,14 +65,19 @@ html {
   height: 120px;
   padding: 10px;
 }
-#map-reset {
-  height: 50px;
+#map-reset, #map-reset-bottom {
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
-#map-reset p {
+#map-reset:hover, #map-reset-bottom:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+#map-reset p, #map-reset-bottom p {
   margin-left: 0;
-  margin-top: 13px;
+  margin-top: 4px;
   text-align: center;
   font-size: 20px;
+  color: black;
 }
 .map-list-item img {
   width: 100px;
