@@ -12,7 +12,7 @@ $(document).ready(
                          content +=  data[i].map_title;
                          content  += '</h3>';
                          content +=  data[i].map_body;
-                         content +=  '</div>';
+                         content +=  '<p><small><em>Make maps like this one at <a href="http://orbitist.com">ORBITIST.COM</a></em></small></p></div>';
                     $('div.map-info').append(content); // Add content to map-info pane
                     $('head').append('<style>' + data[i].map_css + '</style>'); // Add custom styles to map
                     if ( data[i].map_custom_mapbox_access_token.length > 5 ) {
