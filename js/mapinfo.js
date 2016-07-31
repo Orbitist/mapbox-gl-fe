@@ -10,9 +10,13 @@ $(document).ready(
                          content  += '">';
                     	 	 content  += '<div class="map-info-body"><h3>';
                          content +=  data[i].map_title;
-                         content  += '</h3>';
+                         content  += '</h3><p>By <a href="https://app.orbitist.com/u/' + data[i].map_author_name + '" >';
+                         content +=  data[i].map_author_full_name;
+                         content +=  '</a></p>';
                          content +=  data[i].map_body;
-                         content +=  '<p><small><em>Make maps like this one at <a href="http://orbitist.com">ORBITIST.COM</a></em></small></p></div>';
+                         content += '<a href="https://app.orbitist.com/u/' + data[i].map_author_name + '" ><div class="author-profile-link"><img src="' + data[i].map_author_profile_image + '" class="author-profile-image" />';
+                         content += '<p><small>More maps by:</small><br />' + data[i].map_author_full_name + '</p></div>';
+                         content +=  '<p><small><em>Make maps like this one at <a href="http://orbitist.com">ORBITIST.COM</a></em></small></p></div></a>';
                     $('div.map-info').append(content); // Add content to map-info pane
                     $('head').append('<style>' + data[i].map_css + '</style>'); // Add custom styles to map
                     if ( data[i].map_custom_mapbox_access_token.length > 5 ) {

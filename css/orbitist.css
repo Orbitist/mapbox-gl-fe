@@ -36,7 +36,21 @@ html {
   max-width: 100%;
 }
 .map-info-body {
-  padding: 0 10px;
+  padding: 0 10px 75px;
+}
+
+.author-profile-link {
+  min-height: 75px;
+  padding: 10px;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+}
+.author-profile-link img {
+  width: 75px;
+  float: right;
+  border-radius: 50px;
 }
 
 .map-list {
