@@ -41,7 +41,12 @@ map.on('load', function() {
       "icon-ignore-placement": true,
       "text-field": "{point_title}",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-      "text-size": 12,
+      "text-size": {
+        "stops": [
+          [10, 0],
+          [12, 12]
+        ]
+      },
       "text-offset": [0, 0.5],
       "text-anchor": "top",
       "text-allow-overlap": true
