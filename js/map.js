@@ -1,10 +1,18 @@
+// Set Url for points info API
+var pointsInfoApi = 'https://app.orbitist.com/api/v1/points/' + mapid + '.json';
+
+// Do things if in edit mode
+if (mode == 'edit'){
+  var pointsInfoApi = 'https://app.orbitist.com/api/v1/points/edit/' + mapid + '.json';
+}
+
 // Get points geojson data //
 var orbitistPointsGeojson = (function () {
     var orbitistPointsGeojson = null;
     $.ajax({
         'async': false,
         'global': false,
-        'url': 'https://app.orbitist.com/api/v1/points/' + mapid + '.json',
+        'url': pointsInfoApi,
         'dataType': "json",
         'success': function (data) {
             orbitistPointsGeojson = data;
@@ -94,6 +102,10 @@ map.on('click', function (e) {
   }
   else if (feature.properties.point_image.length > 5) {
     $('.popup-image-anchor').append('<img src="' + feature.properties.point_thumbnail + '" class="popup-top-image"><div class="popupimage-expand"><span class="fa fa-clone"></span> Expand Image</div>');
+  }
+  // Do things if in edit mode
+  if (mode == 'edit'){
+    $('div.popup-body').append('<a target="_parent" href="https://app.orbitist.com/node/' + feature.properties.point_id + '/edit?destination=edit-map/' + mapid + '"><div class="edit-button"><i class="fa fa-pencil"></i> Edit</div></a>');
   }
 });
 

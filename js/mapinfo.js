@@ -1,7 +1,16 @@
+// Set Url for map info API
+var mapInfoApi = 'https://app.orbitist.com/api/v1/map.json?mapid=' + mapid;
+
+// Do things if in edit mode
+if (mode == 'edit'){
+  var mapInfoApi = 'https://app.orbitist.com/api/v1/map_edit.json?mapid=' + mapid;
+  $('div.map-info').append('<a target="_parent" href="https://app.orbitist.com/node/' + mapid + '/edit?destination=edit-map/' + mapid +'"><div class="edit-button"><i class="fa fa-pencil"></i> Edit</div></a>');
+}
+
 $(document).ready(
     function(){
         $.getJSON(
-            'https://app.orbitist.com/api/v1/map.json?mapid=' + mapid,
+          mapInfoApi,
             function(data){
                 // ciclo l'array
                 for(i=0; i<data.length; i++){

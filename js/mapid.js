@@ -12,3 +12,4 @@ function getUrlVars()
     return vars;
 }
 var mapid = getUrlVars()["mapid"];
+var mode = getUrlVars()["mode"];
